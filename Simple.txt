@@ -1,0 +1,86 @@
+* Generated for: PrimeSim
+* Design library name: basic_cells 
+* Design cell name: tarea_2 
+* Design view name: schematic
+
+.option PARHIER = LOCAL
+.option PORT_VOLTAGE_SCALE_TO_2X = 1
+.option S_ELEM_CACHE_DIR = "/home/Mora_Artavia_I_2024_vlsi/.synopsys_custom/sparam_dir" 
+.option PVA_OUTPUT_DIR = "/home/Mora_Artavia_I_2024_vlsi/.synopsys_custom/pva_dir" 
+.option WDF=1 
+
+.temp 25
+.lib '/mnt/vol_NFS_rh003/Est_VLSI_I_2024/Mora_Artavia_I_2024_vlsi/Hspice/lp5mos/xt018.lib' tm
+.lib '/mnt/vol_NFS_rh003/Est_VLSI_I_2024/Mora_Artavia_I_2024_vlsi/Hspice/lp5mos/param.lib' 3s 
+.lib '/mnt/vol_NFS_rh003/Est_VLSI_I_2024/Mora_Artavia_I_2024_vlsi/Hspice/lp5mos/config.lib' default
+
+*PrimeWave Design Environment Version U-2023.03-SP2
+*Mon Apr 22 14:11:02 2024
+
+.global gnd! vdd!
+******************************************************************************************
+* Library          : basic_cells
+* Cell             : tarea_2
+* View             : schematic
+* View Search List : hspice hspiced schematic cmos_sch spice veriloga
+* View Stop List   : hspice hspiceD
+******************************************************************************************
+xm13 y net56 gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06 
++ pd=1.84e-06 nrs=0.613636 nrd=0.613636 m='47*1' parl='47*1' xf_subext=0 
+xm12 net56 net41 gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06 
++ pd=1.84e-06 nrs=0.613636 nrd=0.613636 m='26*1' parl='26*1' xf_subext=0
+xm11 net56 net33 gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06
++ pd=1.84e-06 nrs=0.613636 nrd=0.613636 m='26*1' parl='26*1' xf_subext=0
+xm10 net41 d gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06
++ pd=1.84e-06 nrs=0.613636 nrd=0.613636 m='12*1' parl='12*1' xf_subext=0
+xm9 net41 c gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06 pd=1.84e-06
++ nrs=0.613636 nrd=0.613636 m='12*1' parl='12*1' xf_subext=0
+xm8 net33 b gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06 pd=1.84e-06 
++ nrs=0.613636 nrd=0.613636 m='12*1' parl='12*1' xf_subext=0
+xm0 net33 a gnd! gnd! ne w=440n l=180n as=2.112e-13 ad=2.112e-13 ps=1.84e-06 pd=1.84e-06 
++ nrs=0.613636 nrd=0.613636 m='12*1' parl='12*1' xf_subext=0
+xm7 y net56 vdd! vdd! pe w=880n l=180n as=4.224e-13 ad=4.224e-13 ps=2.72e-06 pd=2.72e-06 
++ nrs=0.306818 nrd=0.306818 m='24*1' parl='24*1' xf_subext=0
+xm6 net56 net41 net25 net25 pe w=880n l=180n as=4.224e-13 ad=4.224e-13 ps=2.72e-06
++ pd=2.72e-06 nrs=0.306818 nrd=0.306818 m='7*1' parl='7*1' xf_subext=0
+xm5 net25 net33 vdd! vdd! pe w=880n l=180n as=4.224e-13 ad=4.224e-13 ps=2.72e-06
++ pd=2.72e-06 nrs=0.306818 nrd=0.306818 m='7*1' parl='7*1' xf_subext=0
+xm4 net41 d net17 net17 pe w=880n l=180n as=4.224e-13 ad-4.224e-13 ps=2.72e-06
++ pd=2.72e-06 nrs=0.306818 nrd=0.306818 m='3*1' parl='3*1' xf_subext=0
+xm3 net17 c vdd! vdd! pe w=880n l=180n as=4.224e-13 ad-4.224e-13 ps=2.72e-06 pd=2.72e-06
++ nrs=0.306818 nrd=0.306818 m='3*1' parl='3*1' xf_subext=0
+xm2 net33 b net9 net9 pe w='0.88um' l=180n as='4.8e-07*0.88um' ad='4.8e-07*0.88um'
+'+ ps='(1*2)*(4.8e-07+0.88um)' pd='2* (4.8e-07+0.88um) nrs='2.7e-07/0.88um' nrd='2.7e-07/0.88um' 
++m='3*1' parl='3*1' xf_subext=0
+xml net9 a vdd! vdd! pe w='0.88um' l=180n as='4.8e-07*0.88um' ad='4.8e-07*0.88um'
++ ps='(1*2)*(4.8e-07+0.88um)' pd='2*(4.8e-07+0.88um) nrs='2.7e-07/0.88um' nrd='2.7e-07/0.88um' 
++ m='3*1' parl='3*1' xf_subext=0
+
+va a gnd! PWL 200p 0v, 220p 1.8v, 500p 1.8v, 520p 0v, 800p 0v, 820p 1.8v, 1200p 1.8v, 1220p 0v, R 0p
+vd d gnd! PWL 500p 1.8v, 520p 0v, 800p 0v, 820p 1.8v, 1200p 1.8v, 1220p 0v, 1500p 0v, 1520p 1.8v, R 0p
+vc c gnd! PWL 500p 1.8v, 520p 0v, 800p 0v, 820p 1.8v, 1200p 1.8v, 1220p 0v, 1500p 0v, 1520p 1.8v, R 0p
+vb b gnd! PWL 200p 0v, 220p 1.8v, 500p 1.8v, 520p 0v, 800p 0v, 820p 1.8v, 1200p 1.8v, 1220p 0v, R 0p
+c22 y gnd! c=55f
+v26 vdd! gnd! dc=1.8 
+
+
+.tran 0.1ps 3ns 
+.option opfile=1 split_dp=1
+.option probe=1
+.plot v(a) v(b) v(c) v(d) v(y)
+.measure tpdr * rising prop delay 
++ TRIG v(c) VAL='0.9' FALL=1
++ TARG v(y) VAL='0.9' RISE=1
+.measure tpdf * falling prop delay 
++ TRIG v(c) VAL='0.9' RISE=1
++ TARG v(y) VAL='0.9' FALL=1
+.measure tpd param='(tpdr+tpdf)/2' * average prop delay
+.measure trise * rise time
++ TRIG v(y) VAL='0.2*1.8' RISE=1
++ TARG v(y) VAL='0.8*1.8' RISE=1
+.measure tfall * fall time 
++ TRIG v(y) VAL='0.8*1.8' FALL=1
++ TARG v(y) VAL='0.2*1.8' FALL=1
+
+.end 
+ 
