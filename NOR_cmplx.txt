@@ -1,0 +1,83 @@
+* Generated for: PrimeSim 
+* Design library name: basic_cells
+* Design cell name: Tarea2
+* Design view name: schematic
+
+
+
+
+.option PARHIER = LOCAL 
+.option PORT_VOLTAGE_SCALE_TO_2X = 1
+.option S_ELEM_CACHE_DIR = "/home/Cordero_Fallas_I_2024_vlsi/.sypnosys_custom/sparam_dir"
+.option PVA_OUTPUT_DIR = "/home/Cordero_Fallas_I_2024_vlsi/.sypnosys_custom/pva_dir"
+
+.option WDF=1
+.temp 25
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/xt018.lib' tm 
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/param.lib' 3s
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/config.lib' default
+
+*Primewave Design Enviroment Version U-2023.03-SP2
+*Mon Apr 15 20:58:55 2024
+
+.global gnd! vcc!
+**********************************************************************************
+* Library                  : basic_cells
+* Cell                     : Tarea2
+* View                     : schematic 
+* View Search List         : hspice hspiceD schematic cmos_sch spice veriloga
+* View Stop List           : hspice hspiceD
+**********************************************************************************
+xm11 y net70 gnd! gnd! ne w=660n l=180n as=3.168e-13 ad=3.168e-13 ps=2.28e-06
++ pd=2.28e-06 nrs=0.409091 nrd=0.409091 m='20*1' parl='20*1' xf_subext=0
+xm3 net34 d gnd! gnd! ne w=660n l=180n as=3.168e-13 ad=3.168e-13 ps=2.28e-06 pd=2.28e-06 
++nrs=0.409091 nrd=0.409091 m='8*1' parl='8*1' xf_subext=0
+xm2 net34 c gnd! gnd! ne w=660n l=180n as=3.168e-13 ad=3.168e-13 ps-2.28e-06 pd=2.28e-06 
++nrs=0.409091 nrd=0.409091 m='8*1' parl='8*1' xf_subext=0
+xml net70 b net34 net34 ne w=660n l=180n as=3.168e-13 ad=3.168e-13 ps=2.28e-06 
++pd=2.28e-06 nrs=0.409091 nrd=0.409091 m='8*1' parl='8*1' xf_subext=0
+xm0 net70 a net34 net34 ne w=660n l=180n as=3.168e-13 ad=3.168e-13 ps=2.28e-06 
++pd=2.28e-06 nrs=0.409091 nrd=0.409091 m='8*1' parl='8*1' xf_subext=0 
+xm10 y net70 vcc! vcc! pe w=1.32u l=180n as=6.336e-13 ad=6.336e-13 ps=3.6e-06 
++pd=3.6e-06 nrs=0.204545 nrd=0.204545 m='10*1' parl='10*1' xf_subext=0
+xm7 dp c vcc! vcc! pe w=1.32u l=180n as=6.336e-13 ad=6.336e-13 ps=3.6e-06 pd=3.6e-06 
++ nrs=0.204545 nrd=0.204545 m='2*1' parl='2*1' xf_subext=0
+xm6 dp a vcc! vcc! pe w=1.32u l=180n as=6.336e-13 ad=6.336e-13 ps=3.6e-06 pd=3.6e-06 
++ nrs=0.204545 nrd=0.204545 m='2*1' parl='2*1' xf_subext=0
+xm5 net70 d dp dp pe w=1.32u l=180n as=6.336e-13 ad=6.336e-13 ps=3.6e-06 pd=3.6e-06 
++nrs=0.204545 nrd=0.204545 m='2*1' parl='2*1' xf_subext=0
+xm4 net70 b dp dp pe w=1.32u l=180n as=6.336e-13 ad=6.336e-13 ps=3.6e-06 pd=3.6e-06 
++nrs=0.204545 nrd=0.204545 m='2*1' parl='2*1' xf_subext=0
+
+﻿va a gnd! PWL  250p 1.8v, 270p 0v, 520p 0v, 540p 1.8v, R 0p
+vd d gnd! PWL  250p 1.8v, 270p 0v, 520p 0v, 540p 1.8v, R 0p
+vc c gnd! PWL  250p 1.8v, 270p 0v, 520p 0v, 540p 1.8v, R 0p
+vb b gnd! PWL  250p 1.8v, 270p 0v, 520p 0v, 540p 1.8v, R 0p
+v14 vcc! gnd! dc=1.8
+c17 y gnd! c=45f
+
+*PWL 400p 1.8v, 420p 0v, 820p 0v, 840p 1.8v, R 0p
+*PWL 400p 0v, 420p 1.8v, 820p 1.8v, R 0p
+
+﻿
+
+.tran 0.1ps 1.5ns 
+.option opfile=1 split_dp=1 
+.option probe=1
+.plot v(a) v(b) v(c) v(d) v(q) v(y) 
+.measure tpdr * rising prop delay 
++ TRIG v(c) VAL='0.9' FALL=1
++ TARG v(y) VAL='0.9' RISE=1 
+.measure tpdf * falling prop delay 
++ TRIG v(c) VAL='0.9' RISE=1
++ TARG v(y) VAL='0.9' FALL=1
+.measure tpd param='(tpdr+tpdf)/2' * average prop delay 
+.measure trise * rise time
++ TRIG v(y) VAL='0.2*1.8' RISE=1 
++ TARG v(y) VAL='0.8*1.8' RISE=1 
+.measure tfall * fall time
++ TRIG v(y) VAL='0.8*1.8' FALL=1 
++ TARG v(y) VAL='0.2*1.8' FALL=1
+
+.end
+
