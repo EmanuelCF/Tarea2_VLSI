@@ -19,4 +19,9 @@ Para el tamaño de los transistores se realizó el análisis de esfuerzo lógico
 
 ### Estimación de Potencia
 
-Cálculo de retardos de Elemore
+### Cálculo de retardos de Elmore
+Para los retardos de elmore primero se calcula el retardo de la carga y descarga del inversor para luego analizar la compuerta compleja sin el inversor y sumar ambos retardos.
+
+* 
+
+* Tiempos de propagación: Para los tiempos de propagación se plantea el peor caso de carga y descarga en la compuerta
