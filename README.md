@@ -85,3 +85,11 @@ Una vez contrastados los datos teóricos y simulados se procedió a trazar el di
 Así mismo, una vez trazado el layout se procedió a hacer la verificación DRC hasta corregir todos los errores y obtener el modelo final.
 
 ![DRC_compleja](figuras/DRC_compleja.jpeg)
+
+## Solución por compuerta simple 
+Al realizar el análisis por medio de etapas sencillas, en la siguiente figura se muestra lo obtenido.  
+![WhatsApp Image 2024-04-29 at 10 17 53 PM](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/de4a703e-b3a5-4e4f-800d-b52bfc64b380)
+
+A partir del esfuerzo lógico, se obtuvo el tamaño de los transistores PMOS y NMOS en cada una de las etapas. En la primera etapa, conformada por una compuerta NOR se tiene un tamaño igual a 6 para los PMOS y de 24 para los NMOS. En la segunda etapa, conformada por una compuerta NOR, se tiene un tamaño igual a 13 para los PMOS y de 52 para los NMOS. Mientras que en el inversor, a la salida, se tiene un PMOS con tamaño igual a 47 y un NMOS con un tamaño de 93. En la siguiente figura se muestra el esquemático con los tamaños requeridos. 
+
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/fcf61d97-4dcc-4ab2-862a-0b29adb247d5)
