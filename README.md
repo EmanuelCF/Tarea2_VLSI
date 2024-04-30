@@ -119,26 +119,30 @@ Para obtener el retardo total de propagación y contaminación, se dividió en c
 A continuación se muestran los cálculos para cada uno de los casos. 
 
 $$t_{pdr} = \frac{R}{3} \cdot 6C + (\frac{R}{3} + \frac{R}{3}) \cdot 109C + \frac{2R}{13} \cdot 13C + (\frac{2R}{13} + \frac{2R}{13}) \cdot 257C + \frac{R}{93} \cdot 640C$$
-$$t_{pdr} = 237,30 RC$$
+
+$$t_{pdr} = 237, 30 RC$$
 
 $$t_{pdf} = \frac{R}{24} \cdot 109C + \frac{R}{52} \cdot 257C + \frac{R}{93} \cdot 640C$$
-$$t_{pdf} = 20,90 RC$$
+
+$$t_{pdf} = 20, 90 RC$$
 
 $$t_{cdr} = (\frac{R}{3} + \frac{R}{3}) \cdot 109C + (\frac{2R}{13} + \frac{2R}{13}) \cdot 257C + \frac{2R}{47} \cdot 640C$$
+
 $$t_{cdr} = 251, 65 RC$$
 
 $$t_{cdf} = \frac{R}{24} \cdot 109C + \frac{R}{52} \cdot 257C + \frac{R}{93} \cdot 640C$$
-$$t_{cdf} = 20,90 RC$$
+
+$$t_{cdf} = 20, 90 RC$$
 
 #### Contraste con simulación
 En la siguiente tabla se muestra el contraste entre los datos calculados teóricamente y los obtenidos a través de la simulación. 
 
 |     |  Teórico  |  Simulado  | Diferencia    |
 |  :---           |  ---:   |  :---:  |  ---   |
-|  $t_{cdr} (ps)$ |  251, 65 RC | 299, 17 RC | 47, 52 RC |
-|  $t_{cdf} (ps)$ |  20,90 RC   |  64, 79 RC | 43, 89 RC |
-|  $t_{pdr} (ps)$ |  237,30 RC  | 309, 90 RC | 72,6 RC |
-|  $t_{pdf} (ps)$ |  20,90 RC   |  5, 37 RC  | 15, 53 RC |
+|  $t_{cdr} (ps)$ |  251, 65 | 299, 17  | 47, 52  |
+|  $t_{cdf} (ps)$ |  20,90   |  64, 79  | 43, 89  |
+|  $t_{pdr} (ps)$ |  237,30  | 309, 90  | 72, 06  |
+|  $t_{pdf} (ps)$ |  20,90   |  5, 37   | 15, 53  |
 
 A partir de los resultados, se puede observar cómo la diferencia entre los datos es relativamente poca. Por lo que, se puede confirmar que los circuitos equivalentes para calcular los datos teóricamente, ayudan a obtener la aproximación de cada tiempo de retardo, sin embargo, su exactitud podría ser más cercana con los datos a partir de una simulación. 
 
