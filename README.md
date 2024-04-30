@@ -98,8 +98,52 @@ Así mismo, una vez trazado el layout se procedió a hacer la verificación DRC 
 
 ## Solución por compuerta simple 
 Al realizar el análisis por medio de etapas sencillas, en la siguiente figura se muestra lo obtenido.  
+
 ![WhatsApp Image 2024-04-29 at 10 17 53 PM](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/de4a703e-b3a5-4e4f-800d-b52bfc64b380)
 
 A partir del esfuerzo lógico, se obtuvo el tamaño de los transistores PMOS y NMOS en cada una de las etapas. En la primera etapa, conformada por una compuerta NOR se tiene un tamaño igual a 6 para los PMOS y de 24 para los NMOS. En la segunda etapa, conformada por una compuerta NOR, se tiene un tamaño igual a 13 para los PMOS y de 52 para los NMOS. Mientras que en el inversor, a la salida, se tiene un PMOS con tamaño igual a 47 y un NMOS con un tamaño de 93. En la siguiente figura se muestra el esquemático con los tamaños requeridos. 
 
 ![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/fcf61d97-4dcc-4ab2-862a-0b29adb247d5)
+
+En la siguiente figura se muestra la verificación del comportamiento esperado de la compuerta, obtenido al realizar la simulación con el esquemático presentado. 
+
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/f55f82de-12e0-4b6b-bdfc-8a6feddb6bcc)
+
+### Estimación de potencia 
+#### Cálculos del retardo Elmore
+Para obtener el retardo total de propagación y contaminación, se dividió en cada una de las etapas y luego se sumaron los resultados. Se toman en cuentan el peor caso de carga y descarga en la compuerta. En las siguientes figuras se muestran los circuitos equivalentes. 
+
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/8d3fc3d3-22c0-46ca-bf3e-399a1f1ee7a7)
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/13017422-3b74-406f-9e79-65e7b7cbab57)
+
+A continuación se muestran los cálculos para cada uno de los casos. 
+
+$$t_{pdr} = \frac{R}{3} \cdot 6C + (\frac{R}{3} + \frac{R}{3}) \cdot 109C + \frac{2R}{13} \cdot 13C + (\frac{2R}{13} + \frac{2R}{13}) \cdot 257C + \frac{R}{93} \cdot 640C$$
+$$t_{pdr} = 237,30 RC$$
+
+$$t_{pdf} = \frac{R}{24} \cdot 109C + \frac{R}{52} \cdot 257C + \frac{R}{93} \cdot 640C$$
+$$t_{pdf} = 20,90 RC$$
+
+$$t_{cdr} = (\frac{R}{3} + \frac{R}{3}) \cdot 109C + (\frac{2R}{13} + \frac{2R}{13}) \cdot 257C + \frac{2R}{47} \cdot 640C$$
+$$t_{cdr} = 251, 65 RC$$
+
+$$t_{cdf} = \frac{R}{24} \cdot 109C + \frac{R}{52} \cdot 257C + \frac{R}{93} \cdot 640C$$
+$$t_{cdf} = 20,90 RC$$
+
+#### Contraste con simulación
+En la siguiente tabla se muestra el contraste entre los datos calculados teóricamente y los obtenidos a través de la simulación. 
+
+|     |  Teórico  |  Simulado  | Diferencia    |
+|  :---           |  ---:   |  :---:  |  ---   |
+|  $t_{cdr} (ps)$ |  251, 65 RC | 299, 17 RC | 47, 52 RC |
+|  $t_{cdf} (ps)$ |  20,90 RC   |  64, 79 RC | 43, 89 RC |
+|  $t_{pdr} (ps)$ |  237,30 RC  | 309, 90 RC | 72,6 RC |
+|  $t_{pdf} (ps)$ |  20,90 RC   |  5, 37 RC  | 15, 53 RC |
+
+A partir de los resultados, se puede observar cómo la diferencia entre los datos es relativamente poca. Por lo que, se puede confirmar que los circuitos equivalentes para calcular los datos teóricamente, ayudan a obtener la aproximación de cada tiempo de retardo, sin embargo, su exactitud podría ser más cercana con los datos a partir de una simulación. 
+
+#### Layout de la compuerta 
+Para modelar el layout, primero se realizó el Diagrama de Palitos a partir del esquemático obtenido. Al tener tres etapas, se separó el diagrama de cada una de ellas y se conectaron a través de sus respectivas entradas/salidas. A continuación se muestra el Diagrama de Palitos obtenido. 
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/789db8d0-464e-4876-ad6a-265309c639a5)
+
+A partir del Diagrama de Palitos se realizó el layout para la compuerta, el cual se muestra a continuación. 
