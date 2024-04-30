@@ -20,6 +20,16 @@ Luego de calcular los tamaños de cada uno de los transistores, se monta el esqu
 ![Funcionamiento_compleja](figuras/Funcionamiento_compleja.jpeg)
 
 ### Estimación de Potencia
+Para el cálculo de la potencia de la compuerta se utilizó la siguiente expresión:
+
+$$P_{sw}= \alpha \cdot C \cdot V_{DD}^2 \cdot f_{sw}$$
+
+El periodo de reloj maximo utilizado fue de 600ps lo que equivale a una frecuencia de 1.67 GHz, con este dato y asumiendo un factor de actividad de 0.5 para cada una de las entradas se tiene que la potencia dinámica de la compuerta es de:
+
+
+$$P_{sw}= 0.5 \cdot 0.483fF \cdot 1.8^2 \cdot 1.67 GHz$$
+
+Obteniendo que la potencia de la compuerta es de $$P_{sw}= 1.31 \mu W$$
 
 ### Cálculo de retardos de Elmore
 Para los retardos de elmore primero se calcula el retardo de la carga y descarga del inversor para luego analizar la compuerta compleja sin el inversor y sumar ambos retardos.
