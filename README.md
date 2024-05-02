@@ -151,3 +151,7 @@ Para modelar el layout, primero se realizó el Diagrama de Palitos a partir del 
 ![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/789db8d0-464e-4876-ad6a-265309c639a5)
 
 A partir del Diagrama de Palitos se realizó el layout para la compuerta, el cual se muestra a continuación. 
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/04a8660c-f7bf-4226-8d93-1c7ac56845ad)
+
+Finalmente, se muestra el resultado de la verificación DRC. 
+![image](https://github.com/EmanuelCF/Tarea2_VLSI/assets/149116215/f896763c-14da-49c2-9fe8-28a0be29e16b)
